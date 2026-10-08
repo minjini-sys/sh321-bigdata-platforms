@@ -1,0 +1,15 @@
+# Python and notebook temporary files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local credentials and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Large course dataset (kept locally)
+/data/fhvhv_tripdata_2020-03_short.csv

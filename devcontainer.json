@@ -1,0 +1,21 @@
+{
+  "name": "Bitnami Spark 3.5 (PySpark + JupyterLab)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "forwardPorts": [8888, 4040],
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/workspace/data,type=bind",
+    "source=${localWorkspaceFolder}/notebooks,target=/workspace/notebooks,type=bind"
+  ],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.jupyter"]
+    }
+  },
+  "postCreateCommand": "python -c \"import pyspark, sys; print('PySpark', pyspark.__version__)\"",
+  "postStartCommand": "nohup jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token='' --allow-root --NotebookApp.password='' >/tmp/jlab.log 2>&1 &"
+
+}
