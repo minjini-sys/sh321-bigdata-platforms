@@ -24,3 +24,8 @@ venv/
 
 # Local troubleshooting artifacts
 /tmp/
+
+# Local standalone Jupyter launcher
+/Start-Jupyter.cmd
+
+**/iceberg-proposal
